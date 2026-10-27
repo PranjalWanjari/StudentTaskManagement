@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Student Task Management</h1>
+        <p>Organize your academic tasks easily</p>
+    </header>
+
+    <main class="container">
+
+        <section class="task-form">
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter your task..."
+                    required
+                >
+
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <h2>My Tasks</h2>
+                <span id="taskCount">0 Tasks</span>
+            </div>
+
+            <div id="taskList">
+                <p class="loading">Loading tasks...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Task Management System | College Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
