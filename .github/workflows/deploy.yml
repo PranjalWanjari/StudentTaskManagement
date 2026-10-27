@@ -1,3 +1,4 @@
+
 name: Deploy Student Task Management
 
 on:
@@ -10,15 +11,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      deployments: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: student-task-management
-          directory: frontend
+          command: pages deploy frontend --project-name=student-task-management
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
